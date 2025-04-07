@@ -4,8 +4,12 @@ import Navbar from '../components/Layout/Navbar';
 import AdminDashboard from '../components/Dashboard/AdminDashboard';
 import EmployeeDashboard from '../components/Dashboard/EmployeeDashboard';
 import authService from '../services/authService';
+import UnderWork from './UnderConstruction';
 
 function DashboardPage() {
+
+  const [websiteWorking, setWebsiteWorking] = useState(false);
+
   const [user, setUser] = useState(null);
   const navigate = useNavigate();
 
@@ -26,12 +30,21 @@ function DashboardPage() {
 
   return (
     <div>
-      <Navbar user={user} onLogout={handleLogout} />
-      {user.accessType === 'admin' ? (
-        <AdminDashboard />
-      ) : (
-        <EmployeeDashboard employeeId={user.userId} />
-      )}
+      {
+        websiteWorking ?
+          <>
+            <Navbar user={user} onLogout={handleLogout} />
+            {user.accessType === 'admin' ? (
+              <AdminDashboard />
+            ) : (
+              <EmployeeDashboard employeeId={user.userId} />
+            )}
+          </>
+          :
+          <>
+            <UnderWork />
+          </>
+      }
     </div>
   );
 }
