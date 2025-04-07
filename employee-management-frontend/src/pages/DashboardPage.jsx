@@ -8,7 +8,7 @@ import UnderWork from './UnderConstruction';
 
 function DashboardPage() {
 
-  const [websiteWorking, setWebsiteWorking] = useState(false);
+  const [websiteWorking, setWebsiteWorking] = useState(true);
 
   const [user, setUser] = useState(null);
   const navigate = useNavigate();
