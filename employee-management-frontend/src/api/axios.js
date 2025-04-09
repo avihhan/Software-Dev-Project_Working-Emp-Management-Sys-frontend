@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: 'https://your-render-backend-url.onrender.com/api',  //set the backend url here
+  baseURL: 'https://springboot-app-2gl0.onrender.com/api',  //set the backend url here
 });
 
 api.interceptors.request.use(config => {
