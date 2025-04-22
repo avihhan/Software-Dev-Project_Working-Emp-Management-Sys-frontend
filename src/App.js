@@ -10,7 +10,7 @@ function PrivateRoute({ children }) {
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/Software-Dev-Project_Working-Emp-Management-Sys-frontend">
       <Routes>
         <Route path="/" element={<LoginPage />} />
         <Route 
